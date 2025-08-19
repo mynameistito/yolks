@@ -24,8 +24,13 @@ RUN         apt update \
                 build-essential \
                 libtool \
                 iputils-ping \
+                mtr-tiny \
+                traceroute \
+                netcat-openbsd \
                 libnss3 \
-                tini
+                tini \
+            && chmod u+s /bin/ping \
+            && chmod u+s /usr/bin/mtr-packet
 
 RUN         npm install --global npm@latest typescript ts-node @types/node
 
